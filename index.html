@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Natalia Pahlavan — Software Engineer</title>
+  <meta name="description" content="Natalia Pahlavan — software engineer." />
+
+  <meta property="og:title" content="Natalia Pahlavan" />
+  <meta property="og:description" content="Software engineer." />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="data:," />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <!-- ===================== TOP NAV ===================== -->
+  <nav class="topnav">
+    <a href="#top" class="topnav-name">Natalia Pahlavan</a>
+    <div class="topnav-links">
+      <a href="#about">about</a>
+      <a href="#education">education</a>
+      <a href="#projects">projects</a>
+      <a href="#experience">experience</a>
+      <a href="#contact">contact</a>
+    </div>
+  </nav>
+
+  <main id="top">
+    <!-- ===================== HEADER ===================== -->
+    <header class="header">
+      <h1 class="name">Natalia Pahlavan</h1>
+      <p class="tagline">
+        I build <span class="typed" id="typed"></span><span class="cursor">_</span>
+      </p>
+    </header>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="section" id="about">
+      <h2>about</h2>
+      <p>
+        Hi! I'm Natalia Pahlavan, and I study computer science at Stanford. I'm
+        drawn to the place where math, machine learning, and systems meet, and I
+        spend most of my time turning research ideas into things that actually
+        run.
+      </p>
+      <p>
+        Right now I do research at the Stanford AI Lab, working on reinforcement
+        learning and vision-language models. Along the way I've built across
+        internships at Point72, Scale AI, and Trellis Law. Whether it's teaching
+        language models to write GPU kernels or hacking together a voice-driven
+        interview coach over a weekend, I love taking on hard problems and
+        shaping them into tools people can use.
+      </p>
+      <p>
+        I'm endlessly curious about how things work, and I'm always looking for
+        the next interesting problem to dig into.
+      </p>
+    </section>
+
+    <!-- ===================== EDUCATION ===================== -->
+    <section class="section" id="education">
+      <h2>education</h2>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Stanford University</span>
+          <span class="entry-date">Expected 2027</span>
+        </div>
+        <p class="entry-desc">B.S. in Computer Science.</p>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="section" id="projects">
+      <h2>projects</h2>
+
+      <div class="entry" id="proj-gpu-kernels" data-slug="gpu-kernels">
+        <div class="entry-head">
+          <span class="entry-title">Adapting Language Models for Low-Resource GPU Kernel Programming</span>
+        </div>
+        <ul class="entry-bullets">
+          <li>Teaching LLMs to write fast, compiler-verified GPU kernels for AMD HIP, a low-resource language where open-source training data is scarce.</li>
+          <li>Built a synthetic dataset of 400 PyTorch tasks and a multi-agent pipeline that translates and optimizes kernels via evolutionary search with MI350X benchmarking.</li>
+          <li>Trained with SFT then GRPO reinforcement learning using hardware-in-the-loop rewards, evaluated on KernelBench for compilation, correctness, and speedup over PyTorch.</li>
+        </ul>
+        <a class="talk-link" href="https://www.youtube.com/watch?v=S--KE2qXlOQ"
+           target="_blank" rel="noopener">
+          <span class="talk-play" aria-hidden="true">▶</span>
+          <span class="talk-text">Presented at AMD AI DevDay 2026!</span>
+          <span class="talk-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <div class="entry" id="proj-egocentric" data-slug="egocentric-rl">
+        <div class="entry-head">
+          <span class="entry-title">Egocentric Future Action Anticipation with Plan-and-Verify Reinforcement Learning</span>
+        </div>
+        <ul class="entry-bullets">
+          <li>Predicts what a person will do next from first-person video, the anticipation embodied AI in robots, AR/VR, and smart glasses depends on.</li>
+          <li>Built on a Qwen2-VL vision-language model over the Ego-Exo4D dataset, comparing supervised fine-tuning (LoRA) against GRPO reinforcement learning.</li>
+          <li>Uses a plan-and-verify reward: the model drafts a first-person plan, then an exocentric verifier checks it from a third-person view, predicting the next 30 seconds of activity against ground-truth keysteps.</li>
+        </ul>
+        <div class="entry-links">
+          <a href="https://drive.google.com/file/d/1kuGpXjm0zEvAn6sRqHKQAEXcYi-qlxZv/view?usp=sharing" target="_blank" rel="noopener">poster ↗</a>
+        </div>
+      </div>
+
+      <div class="entry" id="proj-codecrack" data-slug="codecrack">
+        <div class="entry-head">
+          <span class="entry-title">
+            <a href="https://devpost.com/software/codecrack" target="_blank" rel="noopener">CodeCrack: a voice-driven AI agent simulating dynamic, real-time mock interviews</a>
+          </span>
+        </div>
+        <ul class="entry-bullets">
+          <li>A voice-driven mock interview platform that recreates the pressure of a live coding interview, with an ElevenLabs voice agent playing a senior software engineer across both behavioral and technical rounds.</li>
+          <li>Built on Vercel with an in-browser IDE (Monaco editor plus a Pyodide Python interpreter) so candidates write and run real code, with LeetCode-style questions pulled from a HuggingFace dataset.</li>
+          <li>An agentic system tracks the full interaction state, streaming difficulty-matched questions for the agent to read aloud, testing submissions on "Run Code," offering open-ended hints, and returning final feedback on communication, problem-solving, and debugging via ElevenLabs' criteria evaluation.</li>
+        </ul>
+        <span class="award-badge">
+          <span class="award-icon" aria-hidden="true">★</span>
+          1st Place, Best Use of ElevenLabs at Stanford TreeHacks
+        </span>
+        <div class="entry-links">
+          <a href="https://devpost.com/software/codecrack" target="_blank" rel="noopener">devpost ↗</a>
+          <a href="https://github.com/nataliapahlavan/TreeHacks2025" target="_blank" rel="noopener">github ↗</a>
+        </div>
+      </div>
+
+      <div class="entry" id="proj-search-rescue" data-slug="search-rescue">
+        <div class="entry-head">
+          <span class="entry-title">A Search &amp; Rescue Agent for Hazardous Grid Environments Using Reinforcement Learning</span>
+        </div>
+        <ul class="entry-bullets">
+          <li>Trains an autonomous agent to run search-and-rescue missions in a grid world, dodging moving fire hazards to reach a trapped victim and a safe exit.</li>
+          <li>A Proximal Policy Optimization (PPO) agent learns the task under stochastic fire movement and sparse rewards.</li>
+          <li>The resulting policy reliably avoids hazards and completes the full objective sequence through coordinated obstacle avoidance and long-horizon planning.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== EXPERIENCE ===================== -->
+    <section class="section" id="experience">
+      <h2>experience</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Software Engineer Intern <span class="at">@ Point72</span></span>
+          <span class="entry-date">Summer 2025 &amp; 2026</span>
+        </div>
+        <ul class="entry-bullets">
+          <li>Returned for a second summer after an initial internship in 2025.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Research Assistant <span class="at">@ Stanford AI Laboratory (SAIL)</span></span>
+          <span class="entry-date">Jan 2026 — present</span>
+        </div>
+        <ul class="entry-bullets">
+          <li>Stanford Vision &amp; Learning Lab (SVL), advised by Chaitanya Patel under Prof. Ehsan Adeli.</li>
+          <li>Scaling Intelligence Lab, advised by Simon Guo under Prof. Azalia Mirhoseini.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Technical Advisor Intern, Code &amp; Math <span class="at">@ Scale AI</span></span>
+          <span class="entry-date">Nov 2024 — Jun 2025</span>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Software Engineer Intern <span class="at">@ Trellis Law</span></span>
+          <span class="entry-date">Jun 2024 — Sep 2024</span>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Computer Science Research Intern <span class="at">@ Stony Brook University</span></span>
+          <span class="entry-date">2020 — 2023</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="section" id="contact">
+      <h2>contact</h2>
+      <p class="contact-line">
+        I'm always chasing the next hard problem to solve, and the best ideas
+        usually start as a conversation. If you're building something ambitious,
+        or just want to trade ideas about math, ML, or whatever you're curious
+        about, reach out at
+        <a href="mailto:natalia9@stanford.edu">natalia9@stanford.edu</a>.
+      </p>
+      <nav class="links" aria-label="Profiles">
+        <a href="mailto:natalia9@stanford.edu">email</a>
+        <a href="https://github.com/nataliapahlavan" target="_blank" rel="noopener">github</a>
+        <a href="https://linkedin.com/in/natalia-pahlavan-b3b117205" target="_blank" rel="noopener">linkedin</a>
+      </nav>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+      <p>&copy; <span id="year"></span> Natalia Pahlavan</p>
+    </footer>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>

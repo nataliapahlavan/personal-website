@@ -1,0 +1,515 @@
+/* =========================================================
+   Natalia Pahlavan — personal website
+   Plain: white background, black text, monospace throughout.
+   Minimal, spacious, with a small top nav.
+   ========================================================= */
+
+:root {
+  --bg: #ffffff;
+  --text: #141414;
+  --muted: #6f6f6f;
+  --border: #e6e6e6;
+  --max-width: 42rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas,
+    monospace;
+  font-size: 15px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+/* ---------- Top nav ---------- */
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+.topnav-name {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.topnav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.topnav-links a {
+  color: var(--muted);
+  transition: color 0.15s ease;
+}
+
+.topnav-links a:hover,
+.topnav-name:hover {
+  color: var(--text);
+}
+
+/* ---------- Layout ---------- */
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 5rem;
+}
+
+/* ---------- Header ---------- */
+.header {
+  margin-bottom: 5rem;
+}
+
+.name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.5rem;
+}
+
+.tagline {
+  color: var(--text);
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.typed {
+  color: var(--text);
+}
+
+.cursor {
+  font-weight: 400;
+  animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+/* ---------- Sections ---------- */
+.section {
+  margin-bottom: 4.5rem;
+  scroll-margin-top: 5rem;
+}
+
+.section h2 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: lowercase;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  margin: 0 0 1.5rem;
+}
+
+.section h2::before {
+  content: "# ";
+}
+
+.section p {
+  margin: 0 0 1rem;
+}
+
+/* ---------- Entries (projects / experience) ---------- */
+.entry {
+  margin-bottom: 2rem;
+}
+
+.entry:last-child {
+  margin-bottom: 0;
+}
+
+.entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.1rem;
+}
+
+.entry-title {
+  font-weight: 700;
+}
+
+.entry-title .at {
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.entry-title a {
+  border-bottom: 1px solid var(--border);
+  transition: border-color 0.15s ease;
+}
+
+.entry-title a:hover {
+  border-bottom-color: var(--text);
+}
+
+.entry-date {
+  color: var(--muted);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.entry-desc {
+  color: var(--muted);
+  margin: 0;
+}
+
+.entry-bullets {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  color: var(--muted);
+}
+
+.entry-bullets li {
+  position: relative;
+  padding-left: 1.3rem;
+  margin-bottom: 0.4rem;
+}
+
+.entry-bullets li:last-child {
+  margin-bottom: 0;
+}
+
+.entry-bullets li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--text);
+}
+
+/* ---------- Award badge (highlight) ---------- */
+.award-badge {
+  --gold: #b8860b;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 0.9rem;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--gold);
+  border: 1px solid rgba(184, 134, 11, 0.4);
+  border-radius: 6px;
+  background: rgba(184, 134, 11, 0.06);
+}
+
+.award-icon {
+  font-size: 0.9rem;
+  color: var(--gold);
+}
+
+/* ---------- Entry links row ---------- */
+.entry-links {
+  display: flex;
+  gap: 0.7rem;
+  margin-top: 0.9rem;
+  font-size: 0.82rem;
+}
+
+.entry-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  font-weight: 500;
+  color: var(--text);
+  border: 1px solid var(--text);
+  border-radius: 6px;
+  transition: color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+}
+
+.entry-links a:hover {
+  color: var(--bg);
+  background: var(--text);
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .award-icon {
+    animation: none;
+  }
+}
+
+/* ---------- Talk link (YouTube highlight) ---------- */
+.talk-link {
+  --yt: #ff0033;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.9rem;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--yt);
+  border: 1px solid rgba(255, 0, 51, 0.35);
+  border-radius: 6px;
+  background: rgba(255, 0, 51, 0.04);
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.talk-link:hover {
+  background: rgba(255, 0, 51, 0.09);
+  border-color: var(--yt);
+  transform: translateY(-2px);
+}
+
+.talk-play {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  font-size: 0.7rem;
+  color: #fff;
+  background: var(--yt);
+  border-radius: 4px;
+  animation: talk-pulse 1.8s ease-in-out infinite;
+}
+
+.talk-text {
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.talk-link:hover .talk-text {
+  border-bottom-color: var(--yt);
+}
+
+.talk-arrow {
+  transition: transform 0.2s ease;
+}
+
+.talk-link:hover .talk-arrow {
+  transform: translateX(4px);
+}
+
+@keyframes talk-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 51, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(255, 0, 51, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .talk-play {
+    animation: none;
+  }
+}
+
+/* ---------- Contact ---------- */
+.contact-line {
+  color: var(--muted);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.links a {
+  border-bottom: 1px solid var(--border);
+  transition: border-color 0.15s ease;
+}
+
+.links a:hover {
+  border-bottom-color: var(--text);
+}
+
+/* ---------- Terminal projects explorer ---------- */
+.terminal {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0 0 2.5rem;
+  background: #fbfbfb;
+  font-size: 0.85rem;
+}
+
+.terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.75rem;
+  background: #f0f0f0;
+  border-bottom: 1px solid var(--border);
+}
+
+.terminal-bar .dot {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: #cfcfcf;
+}
+
+.terminal-titlebar {
+  margin-left: 0.5rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.terminal-body {
+  padding: 0.85rem 0.95rem;
+}
+
+.terminal-log {
+  max-height: 16rem;
+  overflow-y: auto;
+}
+
+.term-line {
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin-bottom: 0.15rem;
+  line-height: 1.55;
+}
+
+.terminal-prompt {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.term-ok {
+  color: var(--text);
+}
+
+.term-err {
+  color: #b00020;
+}
+
+.term-hint {
+  color: var(--muted);
+}
+
+.term-slugs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  margin: 0.1rem 0 0.25rem;
+}
+
+.term-slug {
+  font: inherit;
+  color: var(--text);
+  background: none;
+  border: none;
+  border-bottom: 1px dashed var(--muted);
+  padding: 0;
+  cursor: pointer;
+}
+
+.term-slug:hover {
+  border-bottom-style: solid;
+}
+
+.terminal-inputline {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+}
+
+.terminal-input {
+  flex: 1;
+  font: inherit;
+  color: var(--text);
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  caret-color: var(--text);
+}
+
+/* Flash highlight on a project when opened from the terminal */
+.entry.flash {
+  animation: entry-flash 1.4s ease;
+}
+
+@keyframes entry-flash {
+  0% {
+    background: rgba(184, 134, 11, 0.16);
+    box-shadow: -0.75rem 0 0 rgba(184, 134, 11, 0.5);
+  }
+  100% {
+    background: transparent;
+    box-shadow: -0.75rem 0 0 rgba(184, 134, 11, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .entry.flash {
+    animation: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .terminal {
+    font-size: 0.8rem;
+  }
+  .terminal-titlebar {
+    display: none;
+  }
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  margin-top: 5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 480px) {
+  .topnav {
+    padding: 1.25rem;
+  }
+  main {
+    padding: 2.5rem 1.25rem 4rem;
+  }
+  .header {
+    margin-bottom: 3.5rem;
+  }
+}
