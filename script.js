@@ -11,7 +11,6 @@
     "intelligent systems.",
     "things that learn.",
     "research into real-world tools.",
-    "at the intersection of math and code.",
     "because I love figuring out how things work.",
   ];
 
